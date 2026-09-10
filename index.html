@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLMun Student Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="app">
+
+  <!-- LOGIN -->
+  <section id="loginPage" class="page auth-page active">
+    <div class="auth-decoration top-wave"></div>
+    <div class="auth-content">
+      <div class="brand">
+        <div class="brand-logo">🎓</div>
+        <h1>STUDENT PORTAL</h1>
+        <p>Your all-in-one student information portal</p>
+      </div>
+
+      <form id="loginForm" class="login-card">
+        <label for="studentId">Student ID:</label>
+        <div class="input-wrap">
+          <span>♙</span>
+          <input id="studentId" type="text" placeholder="Enter Student ID" autocomplete="username">
+        </div>
+
+        <label for="password">Password:</label>
+        <div class="input-wrap">
+          <span>🔒</span>
+          <input id="password" type="password" placeholder="Enter Password" autocomplete="current-password">
+          <button type="button" class="eye-btn" id="togglePassword">◉</button>
+        </div>
+
+        <div id="loginMessage" class="message"></div>
+        <button class="primary-btn" type="submit">LOG IN</button>
+        <button class="link-btn" type="button" data-page="forgot">Forgot Password?</button>
+      </form>
+    </div>
+    <div class="auth-decoration bottom-wave"></div>
+  </section>
+
+  <!-- APP SHELL -->
+  <section id="appPage" class="page app-page">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="mini-logo">🎓</div>
+        <div><strong>STUDENT</strong><span>PORTAL</span></div>
+      </div>
+      <nav>
+        <button data-page="dashboard">⌂ <span>Dashboard</span></button>
+        <button data-page="attendance">✓ <span>Attendance</span></button>
+        <button data-page="subjects">▤ <span>Subjects</span></button>
+        <button data-page="grades">A+ <span>Grades</span></button>
+        <button data-page="schedule">▦ <span>Schedule</span></button>
+        <button data-page="announcements">◉ <span>Announcements</span></button>
+      </nav>
+      <button id="logoutBtn" class="logout-btn">↪ <span>Logout</span></button>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="mobileMenu" class="menu-btn">☰</button>
+        <h2 id="pageTitle">DASHBOARD</h2>
+        <button class="notification">♧<span class="dot"></span></button>
+      </header>
+
+      <!-- DASHBOARD -->
+      <div id="dashboard" class="view active-view">
+        <div class="welcome-card">
+         <div class="avatar">
+<img src="hanz.jpg.png" alt=" hanz">
+</div>
+          <div>
+            <small>Welcome,</small>
+            <h1>Hanz Rey Parohinog</h1>
+            <p><b>Student ID:</b> 24173862 &nbsp; | &nbsp; <b>Section:</b> BSIT-3D</p>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <button class="feature-card" data-page="attendance"><span class="feature-icon">📅</span><b>ATTENDANCE</b><small>View attendance records</small></button>
+          <button class="feature-card" data-page="subjects"><span class="feature-icon">📚</span><b>SUBJECTS</b><small>View enrolled subjects</small></button>
+          <button class="feature-card" data-page="schedule"><span class="feature-icon">🗓️</span><b>SCHEDULE</b><small>Check your class schedule</small></button>
+          <button class="feature-card" data-page="grades"><span class="feature-icon">🏆</span><b>GRADES</b><small>View academic grades</small></button>
+          <button class="feature-card wide" data-page="announcements"><span class="feature-icon">📢</span><b>ANNOUNCEMENTS</b><small>Latest school updates</small></button>
+        </div>
+      </div>
+
+      <!-- ATTENDANCE -->
+      <div id="attendance" class="view">
+        <div class="section-intro">
+          <div>
+            <h1>View Your<br><strong>attendance details</strong></h1>
+            <p>Select a subject to see more information.</p>
+          </div>
+          <div class="big-icon">📅✓</div>
+        </div>
+        <h3>My Subjects</h3>
+        <div class="subject-list">
+          <button class="subject-card selected" data-page="humcomp">
+            <span class="subject-icon">▤</span>
+            <span class="subject-info"><b>HUMCOMP</b><small>Human Computer Interaction</small></span>
+            <span class="stats"><i>Present: 8</i><i>Absent: 0</i><i>Late: 4</i></span>
+            <span>›</span>
+          </button>
+          <button class="subject-card" data-page="humcomp"><span class="subject-icon">▤</span><span class="subject-info"><b>QUANMET</b><small>Quantitative Method</small></span><span class="stats"><i>Present: 7</i><i>Absent: 1</i><i>Late: 4</i></span><span>›</span></button>
+          <button class="subject-card" data-page="humcomp"><span class="subject-icon">▤</span><span class="subject-info"><b>INTPROG</b><small>Integrative Programming & Technology</small></span><span class="stats"><i>Present: 5</i><i>Absent: 3</i><i>Late: 4</i></span><span>›</span></button>
+          <button class="subject-card" data-page="humcomp"><span class="subject-icon">▤</span><span class="subject-info"><b>GEL2000</b><small>Interdisciplinary Elective 2</small></span><span class="stats"></span><span>›</span></button>
+        </div>
+      </div>
+
+      <!-- HUMCOMP -->
+      <div id="humcomp" class="view">
+        <div class="detail-card">
+          <div class="detail-heading"><span class="subject-icon large">▤</span><div><h1>HUMCOMP</h1><p>Human Computer Interaction</p></div></div>
+          <div class="meta-grid">
+            <div><b>Instructor</b><span>Mr. Jomar Cris Estilloso</span></div>
+            <div><b>Schedule</b><span>Monday, Thursday</span></div>
+            <div><b>Time</b><span>5:30 - 8:00 PM</span></div>
+            <div><b>Room</b><span>TBA</span></div>
+          </div>
+        </div>
+
+        <h3>Attendance Summary</h3>
+        <div class="summary-grid">
+          <div class="summary present"><strong>8</strong><span>Present</span>✓</div>
+          <div class="summary late"><strong>4</strong><span>Late</span>◷</div>
+          <div class="summary absent"><strong>0</strong><span>Absent</span>⊘</div>
+          <div class="summary total"><strong>12</strong><span>Total</span>▦</div>
+        </div>
+
+        <div class="history-header"><h3>Attendance History</h3><button class="text-btn" id="showAll">See all</button></div>
+        <div class="history-card">
+          <div><b>AUG 10, 2026</b><span class="status present-text">● Present</span></div>
+          <div><b>AUG 13, 2026</b><span class="status present-text">● Present</span></div>
+          <div><b>AUG 17, 2026</b><span class="status late-text">● Late</span></div>
+          <div><b>AUG 20, 2026</b><span class="status present-text">● Present</span></div>
+          <div><b>AUG 27, 2026</b><span class="status present-text">● Present</span></div>
+          <div class="extra-history"><b>AUG 31, 2026</b><span class="status late-text">● Late</span></div>
+        </div>
+        <button class="primary-btn compact" id="doneAttendance">✓ &nbsp; DONE</button>
+      </div>
+
+      <!-- SUCCESS -->
+      <div id="success" class="view success-view">
+        <div class="success-mark">✓</div>
+        <h1>Success!</h1>
+        <p>Attendance details have been<br>viewed successfully.</p>
+        <div class="success-card"><b>▤ &nbsp; HUMCOMP</b><span>Human Computer Interaction</span><div><small>Date & Time</small><strong id="successDate">Aug 27, 2026 • 9:41 PM</strong></div></div>
+        <button class="primary-btn compact" data-page="attendance">⌂ &nbsp; Back to My Attendance</button>
+        <button class="secondary-btn compact" data-page="dashboard">▦ &nbsp; Go to Dashboard</button>
+      </div>
+
+      <!-- SUBJECTS -->
+      <div id="subjects" class="view">
+        <h1 class="view-heading">My Subjects</h1>
+        <div class="info-grid">
+          <div class="info-card"><b>HUMCOMP</b><span>Human Computer Interaction</span><small>Mr. Jomar Cris Estilloso</small></div>
+          <div class="info-card"><b>QUANMET</b><span>Quantitative Method</span><small>College Instructor</small></div>
+          <div class="info-card"><b>INTPROG</b><span>Integrative Programming & Technology</span><small>College Instructor</small></div>
+          <div class="info-card"><b>GEL2000</b><span>Interdisciplinary Elective 2</span><small>College Instructor</small></div>
+        </div>
+      </div>
+
+      <!-- GRADES -->
+      <div id="grades" class="view">
+        <h1 class="view-heading">My Grades</h1>
+        <div class="table-card"><div class="table-row head"><span>Subject</span><span>Grade</span><span>Status</span></div><div class="table-row"><span>HUMCOMP</span><b>1.50</b><em>Passed</em></div><div class="table-row"><span>QUANMET</span><b>1.75</b><em>Passed</em></div><div class="table-row"><span>INTPROG</span><b>1.75</b><em>Passed</em></div></div>
+      </div>
+
+      <!-- SCHEDULE -->
+      <div id="schedule" class="view">
+        <h1 class="view-heading">Class Schedule</h1>
+        <div class="schedule-card"><b>MONDAY</b><span>HUMCOMP — 5:30 PM - 8:00 PM</span><small>Room: TBA</small></div>
+        <div class="schedule-card"><b>THURSDAY</b><span>HUMCOMP — 5:30 PM - 8:00 PM</span><small>Room: TBA</small></div>
+      </div>
+
+      <!-- ANNOUNCEMENTS -->
+      <div id="announcements" class="view">
+        <h1 class="view-heading">Announcements</h1>
+        <div class="announcement-card"><b>📢 Research Activity</b><p>Please check your group's latest research and HCI activity requirements.</p><small>Latest update</small></div>
+        <div class="announcement-card"><b>📅 Class Reminder</b><p>Check your schedule and attendance records regularly through the Student Portal.</p><small>Student Portal</small></div>
+      </div>
+    </main>
+  </section>
+
+  <!-- FORGOT PASSWORD -->
+  <section id="forgotPage" class="page auth-page">
+    <div class="auth-content forgot-content">
+      <div class="brand">
+        <div class="brand-logo">🎓</div>
+        <h1>STUDENT PORTAL</h1>
+        <p>Your all-in-one student information portal</p>
+      </div>
+      <div class="login-card">
+        <h2>Forgot Password?</h2>
+        <p class="forgot-text">Enter your Student ID and we’ll show the recovery instructions for your account.</p>
+        <label for="forgotId">Student ID:</label>
+        <div class="input-wrap"><span>♙</span><input id="forgotId" type="text" placeholder="Enter Student ID"></div>
+        <div id="forgotMessage" class="message"></div>
+        <button class="primary-btn" id="recoverBtn">CONTINUE</button>
+        <button class="link-btn" data-page="login">← Back to Login</button>
+      </div>
+    </div>
+  </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
